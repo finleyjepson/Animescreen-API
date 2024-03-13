@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 
 	_ "github.com/lib/pq"
 )
@@ -15,7 +16,7 @@ var (
 )
 
 func ConnectDB() *sql.DB {
-	connStr := "postgres://sxweaqvo:XGAovELDPZgzlzpoRE-eEYEd_7rhK2oZ@rosie.db.elephantsql.com/sxweaqvo"
+	connStr := os.Getenv("DB_URI")
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
