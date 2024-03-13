@@ -32,7 +32,7 @@ The DB_URI should be the url for the postgres database you are using.
 
 Once u have created a Postgres database, you will need to run the following command to create the tables for the project:
 ```bash
-go run mian.go --seed
+go run main.go --seed
 ```
 
 NOTE: This will also seed the database with some test data.
