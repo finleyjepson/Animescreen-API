@@ -4,7 +4,7 @@
 
 This project is a rework of the backend api from [T3A2-B-Backend](https://github.com/finleyjepson/T3A2-B-Backend) which is the backend for the [T3A-2-B](https://github.com/finleyjepson/T3A2-B-Frontend) project. The original project was built usiing JavaScript with the Express framework, with a MongoDB backend.
 
-The reason for this project is to rewrok the backend to be less resource intensive and be more performant.
+The reason for this project is to rework the backend to be less resource intensive and be more performant.
 for this project i will be using the [GO language](https://go.dev/) with the Fiber framework, and a Postgres Database.
 
 ## Setup
