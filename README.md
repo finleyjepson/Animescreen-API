@@ -48,5 +48,5 @@ This will build the project and create an executable file.
 
 You can then run the executable file using the following command:
 ```bash
-./animescreen-api.exe
+./api.exe
 ```
