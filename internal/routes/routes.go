@@ -4,6 +4,9 @@ import (
 	"api/internal/routes/category_routes"
 	"api/internal/routes/event_routes"
 	"api/internal/routes/user_routes"
+	"api/internal/routes/authentication"
+	"api/internal/middleware"
+
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -22,12 +25,15 @@ func NewServer() error {
 	api := app.Group("/api")
 
 	// User routes
-	user := api.Group("/user")
+	user := api.Group("/user", middleware.ValidateJWT)
 	user.Get("/", user_routes.GetAllUsers)
-	user.Post("/", user_routes.CreateUser)
 	user.Get("/:id", user_routes.GetUser)
 	user.Put("/:id", user_routes.EditUser)
-	user.Post("/login", user_routes.Login)
+
+	// Auth routes
+	auth := api.Group("/auth")
+	auth.Post("/login", authentication.Login)
+	auth.Post("/register", authentication.CreateUser)
 
 	// Category routes
 	category := api.Group("/category")
