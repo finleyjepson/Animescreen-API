@@ -13,7 +13,7 @@ func GetUser(c *fiber.Ctx) error {
 
 	var user User
 
-	err := database.DBCon.QueryRow("SELECT * FROM users WHERE id = $1", id).Scan(&user.ID, &user.Username, &user.Password)
+	err := database.DBCon.QueryRow("SELECT * FROM users WHERE id = $1", id).Scan(&user.ID, &user.Username, &user.Password, &user.IsOrganiser, &user.IsAdmin, &user.CreatedAt)
 	if err != nil {
 		log.Fatal(err)
 	}
